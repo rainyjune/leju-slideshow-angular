@@ -1,0 +1,64 @@
+/* Reset */
+body, div, dl, dt, dd, del, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+/* Page */
+
+body {
+    font: normal 14px/1.5 "\5FAE\8F6F\96C5\9ED1", Helvetica,STHeiti, Droidsansfallback;
+    color: #444;
+    background-color: #fff;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+}
+
+.y_slider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.y_slider ul li .img {
+    width: 100%;
+    display: block;
+}
+
+.y_navigater {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    margin: auto;
+    z-index: 99;
+    width: 79px;
+    text-align: center;
+}
+.y_navigater ul {
+    display: inline-block;
+    background: rgba(105,2,0,0.9);
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.y_navigater ul li {
+    width: 7px;
+    height: 7px;
+    float: left;
+    margin: 0 4px;
+    background: #510a00;
+    border-radius: 100%;
+}
+
+.y_navigater ul li.on {
+    background: #fff;
+}
