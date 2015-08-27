@@ -100,7 +100,7 @@ angular.module('docsTabsExample', [])
                                 return null;
                         }
 
-                        this.trigger = this.trigger && container.find(this.trigger);
+                        this.trigger = this.trigger;
                         this.prev = this.prev && container.find(this.prev);
                         this.next = this.next && container.find(this.next);
                         return this;
@@ -161,16 +161,16 @@ angular.module('docsTabsExample', [])
                                 allWidth += panels[len-1].offsetWidth;
                         }
                         panel.css('width',allWidth + "px");
-                        if(trigger && trigger.length){  //如果触发容器存在，触发容器无子元素则添加子元素
+                        if(trigger && angular.element(trigger).length){  //如果触发容器存在，触发容器无子元素则添加子元素
                                 var temp='',
-                                childstu = trigger.children();
+                                childstu = angular.element(trigger).children();
                                 if(!childstu.length){
                                         for(var i=0;i<pages;i++){
                                                 temp += '<span'+(i == this.curIndex ? " class="+ this.activeTriggerCls +"" : "")+'></span>';
                                         }
                                         trigger.html(temp);
                                 }
-                                this.triggers = trigger.children();
+                                this.triggers = angular.element(trigger).children();
                                 this.triggerSel = this.triggers[this.curIndex];  //当前状态元素
                         }
                         else{
@@ -201,9 +201,10 @@ angular.module('docsTabsExample', [])
                         if(next && next.length){
                                 next.on('click',function(e){that.forward.call(that,e)});
                         }
-                        if(that.hasTrigger && triggers){
-                                triggers.each(function(n,item){
-                                        angular.elemeng(item).on('click',function(){
+                        if(that.hasTrigger && triggers) {
+                          debugger;
+                                angular.forEach(triggers, function(item, n){
+                                        angular.element(item).on('click',function(){
                                                 that.slideTo(n);
                                         });
                                 });
@@ -440,7 +441,10 @@ angular.module('docsTabsExample', [])
                 touchSlider.cache = [];
         };
         
-        new touchSlider(element);
+        new touchSlider(element[0], {
+          trigger: element[0].querySelector('[data-slideshow-numlist]'),
+          activeTriggerCls: 'on'
+        });
     }
   }
 });
