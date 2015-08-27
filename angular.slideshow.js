@@ -85,7 +85,7 @@ angular.module('docsTabsExample', [])
                         this.init();
                 },
                 findEl : function(){
-                        var container = this.container = angular.element(document.querySelector(this.container));
+                        var container = this.container = angular.element(element);
                         if(!container.length){return null;}
 
                         this.wrap = this.wrap && container.find(this.wrap) || container.children().eq(0);
@@ -412,13 +412,13 @@ angular.module('docsTabsExample', [])
                         next = that.next,
                         triggers = that.triggers;
                         if(_panel.removeEventListener){
-                                _panel.removeEventListener('touchstart', that, false);
-                                _panel.removeEventListener('touchmove', that, false);
-                                _panel.removeEventListener('touchend', that, false);
-                                _panel.removeEventListener('webkitTransitionEnd', that, false);
-                                _panel.removeEventListener('msTransitionEnd', that, false);
-                                _panel.removeEventListener('oTransitionEnd', that, false);
-                                _panel.removeEventListener('transitionend', that, false);
+                                _panel.removeEventListener('touchstart', that.handleEventBind, false);
+                                _panel.removeEventListener('touchmove', that.handleEventBind, false);
+                                _panel.removeEventListener('touchend', that.handleEventBind, false);
+                                _panel.removeEventListener('webkitTransitionEnd', that.handleEventBind, false);
+                                _panel.removeEventListener('msTransitionEnd', that.handleEventBind, false);
+                                _panel.removeEventListener('oTransitionEnd', that.handleEventBind, false);
+                                _panel.removeEventListener('transitionend', that.handleEventBind, false);
                         }
                         if(prev && prev.length) prev.off('click');
                         if(next && next.length) next.off('click');
@@ -440,7 +440,7 @@ angular.module('docsTabsExample', [])
                 touchSlider.cache = [];
         };
         
-        new touchSlider(".y_slider");
+        new touchSlider(element);
     }
   }
 });
