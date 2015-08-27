@@ -176,6 +176,7 @@ angular.module('docsTabsExample', [])
                         else{
                                 this.hasTrigger = false;
                         }
+                        this.handleEventBind = this.handleEvent.bind(this);
                         return this;
                 },
                 increaseEvent : function(){
@@ -185,13 +186,13 @@ angular.module('docsTabsExample', [])
                         next = that.next,
                         triggers = that.triggers;
                         if(_panel.addEventListener){
-                                _panel.addEventListener('touchstart', that, false);
-                                _panel.addEventListener('touchmove', that, false);
-                                _panel.addEventListener('touchend', that, false);
-                                _panel.addEventListener('webkitTransitionEnd', that, false);
-                                _panel.addEventListener('msTransitionEnd', that, false);
-                                _panel.addEventListener('oTransitionEnd', that, false);
-                                _panel.addEventListener('transitionend', that, false);
+                                _panel.addEventListener('touchstart', that.handleEventBind, false);
+                                _panel.addEventListener('touchmove', that.handleEventBind, false);
+                                _panel.addEventListener('touchend', that.handleEventBind, false);
+                                _panel.addEventListener('webkitTransitionEnd', that.handleEventBind, false);
+                                _panel.addEventListener('msTransitionEnd', that.handleEventBind, false);
+                                _panel.addEventListener('oTransitionEnd', that.handleEventBind, false);
+                                _panel.addEventListener('transitionend', that.handleEventBind, false);
                         }
                         if(that.play){that.begin();}
                         if(prev && prev.length){
