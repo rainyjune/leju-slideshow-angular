@@ -8,8 +8,8 @@
     <script src="angular.js"></script>
     <script src="angular.slideshow.js"></script>
   </head>
-  <body>
-    <div class="y_slider" data-slideshow-container='{"activeTriggerCls": "on", "play": true, "loop": true, "trigger": "#numlist"}'>
+  <body data-ng-controller="TestController">
+    <div  class="y_slider" data-slideshow-container='{"activeTriggerCls": "on", "play": true, "loop": true, "trigger": "#numlist", "callback": "mycallback"}'>
       <div>
         <ul>
           <li><img class="img" src="images/y_bg01.jpg"></li>

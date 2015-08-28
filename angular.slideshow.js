@@ -1,4 +1,9 @@
 angular.module('docsTabsExample', [])
+.controller('TestController', ['$scope', function($scope) {
+  $scope.mycallback = function(cur, x) {
+    debugger;
+  };
+}])
 .directive('slideshowContainer', function() {
   return {
     link: function(scope, element, attr) {
@@ -445,6 +450,9 @@ angular.module('docsTabsExample', [])
         }
         if (slideShowOptions.trigger) {
           slideShowOptions.trigger = element[0].querySelector(slideShowOptions.trigger);
+        }
+        if (slideShowOptions.callback) {
+          slideShowOptions.callback = scope[slideShowOptions.callback];
         }
         
         new touchSlider(element[0], slideShowOptions);
