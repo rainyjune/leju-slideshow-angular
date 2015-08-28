@@ -1,9 +1,4 @@
-angular.module('docsTabsExample', [])
-  .controller('TestController', ['$scope', function($scope) {
-    $scope.mycallback = function(cur, x) {
-      debugger;
-    };
-  }])
+angular.module("lejuslideshow", [])
   .directive('slideshowContainer', function() {
     return {
       link: function(scope, element, attr) {
