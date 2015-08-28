@@ -436,10 +436,18 @@ angular.module('docsTabsExample', [])
                 touchSlider.cache = [];
         };
         
-        new touchSlider(element[0], {
-          trigger: element[0].querySelector('[data-slideshow-numlist]'),
-          activeTriggerCls: 'on'
-        });
+        
+        var slideShowOptions = {};
+        
+        var slideShowOptionsStr = element.attr("data-slideshow-container");
+        if (slideShowOptionsStr) {
+          slideShowOptions = JSON.parse(slideShowOptionsStr);
+        }
+        if (slideShowOptions.trigger) {
+          slideShowOptions.trigger = element[0].querySelector(slideShowOptions.trigger);
+        }
+        
+        new touchSlider(element[0], slideShowOptions);
     }
   }
 });

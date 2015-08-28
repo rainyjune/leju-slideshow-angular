@@ -9,8 +9,8 @@
     <script src="angular.slideshow.js"></script>
   </head>
   <body>
-    <div class="y_slider" data-slideshow-container>
-      <div data-slideshow-wrap>
+    <div class="y_slider" data-slideshow-container='{"activeTriggerCls": "on", "play": true, "loop": true, "trigger": "#numlist"}'>
+      <div>
         <ul>
           <li><img class="img" src="images/y_bg01.jpg"></li>
           <li><img class="img" src="images/y_bg01.jpg"></li>
@@ -18,7 +18,7 @@
         </ul>  
       </div>
       <div class="y_navigater">
-        <ul data-slideshow-numlist>
+        <ul id="numlist">
           <li class="on"></li>
           <li></li>
           <li></li>
