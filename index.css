@@ -28,6 +28,16 @@ body {
     overflow: hidden;
 }
 
+.y_slider ul {
+  position: relative;
+  overflow: auto;
+}
+
+.y_slider ul li {
+  float: left;
+  width: 320px;
+}
+
 .y_slider ul li .img {
     width: 100%;
     display: block;

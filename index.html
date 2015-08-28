@@ -1,24 +1,30 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="docsTabsExample">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
     <title>Leju SlideShow Angular module</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <script src="angular.min.js"></script>
+    <script src="angular.js"></script>
+    <script src="angular.slideshow.js"></script>
   </head>
   <body>
-    <div class="y_slider">
-      <ul>
-        <li><img class="img" src="images/y_bg01.jpg"></li>
-      </ul>
+    <div class="y_slider" data-slideshow-container>
+      <div data-slideshow-wrap>
+        <ul>
+          <li><img class="img" src="images/y_bg01.jpg"></li>
+          <li><img class="img" src="images/y_bg01.jpg"></li>
+          <li><img class="img" src="images/y_bg01.jpg"></li>
+        </ul>  
+      </div>
+      <div class="y_navigater">
+        <ul data-slideshow-numlist>
+          <li class="on"></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>  
     </div>
-    <div class="y_navigater">
-      <ul>
-        <li class="on"></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
+    
   </body>
 </html>
