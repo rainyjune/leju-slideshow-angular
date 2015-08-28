@@ -1,7 +1,5 @@
 # leju-slideshow-angular
 
-=========================
-
 A very simple slideshow directive for AngularJS.
 
 # How to use
@@ -15,7 +13,12 @@ A very simple slideshow directive for AngularJS.
 > Then setup your app
 
 ```javascript
-var myApp = angular.module('MyApp',['lejuslideshow']);
+var myApp = angular.module('MyApp',['lejuslideshow'])
+  .controller('TestController', ['$scope', function($scope) {
+    $scope.mycallback = function(cur, x) {
+      // Your callback function body.
+    };
+  }]);
 ```
 
 > And then just use it by add directive in your HTML
