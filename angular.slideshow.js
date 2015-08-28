@@ -133,11 +133,6 @@ angular.module('docsTabsExample', [])
                         var initLeft = this.left;
                         initLeft -= this.curIndex * this.steps;
                         this.setCoord(panel,initLeft);
-                        if(useTransform){
-//				wrap.css({'-webkit-transform':'translate3d(0,0,0)'});  //防止ios6下滑动会有顿感
-//				panel.css({'-webkit-backface-visibility':'hidden'});
-//				panels.css({'-webkit-transform':gv1+'0,0'+gv2});
-                        }
 
                         var pages = this._pages = Math.ceil(len/status);  //总页数
                         //初始坐标参数
